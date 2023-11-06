@@ -1,0 +1,95 @@
+.box-grid-1 {
+    display: grid;
+    grid-template-columns:repeat(1, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.jsApiItemTitle {
+    font-size: 14px;
+}
+
+.jsApiItemTitle_Box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.jsApiItemDescription {
+    font-size: 12px;
+    color: rgba(31, 56, 88, 0.4);
+}
+
+.jsApiItemIcon {
+    cursor: pointer;
+}
+
+.jsApiItem_Box {
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.jsApiItem_Box:hover {
+    background-color: rgba(31, 56, 88, 0.04)
+}
+
+.jsApiIcon_Box {
+    cursor: pointer;
+    height: 14px;
+}
+
+.box-grid-2 {
+    display: grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.DataSourceApi-title {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.DataSourceApi-content {
+    width: 600px;
+    max-height: 350px;
+    overflow-y: auto;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.DataSourceApi-content-apiName {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 2em
+}
+
+.DataSourceApi-content-InterfacePath {
+    font-size: 14px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.DataSourceApi-content-requestType {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    padding: 1px 4px;
+    display: inline;
+    background-color: rgba(31, 56, 88, 0.1);
+    border-color: rgba(31, 56, 88, 0.06);
+}
+
+.about_box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 20px;
+    gap: 16px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(31, 56, 88, 0.06);
+    border-radius: 4px;
+}
