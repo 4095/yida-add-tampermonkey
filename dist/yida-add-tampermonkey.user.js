@@ -7,7 +7,7 @@
 // @match      https://*.aliwork.com/alibaba/web/*/design/*
 // @require    https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js
 // @require    https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js
-// @require    https://g.alicdn.com/code/lib/xlsx/0.18.5/xlsx.full.min.js
+// @require    https://cdn.bootcdn.net/ajax/libs/xlsx/0.18.5/xlsx.full.min.js
 // @grant      GM_addStyle
 // @grant      GM_setClipboard
 // @grant      unsafeWindow
