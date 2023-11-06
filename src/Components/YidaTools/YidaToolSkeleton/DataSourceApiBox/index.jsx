@@ -1,6 +1,6 @@
 import React from 'react';
 import '../index.css';
-import {Button, Message, Table} from "@alifd/next";
+import {Balloon, Button, Message, Table} from "@alifd/next";
 import CopyIcon from "../../../../Icons/CopyIcon/index.jsx";
 import {GM_setClipboard, unsafeWindow} from "$";
 import InterfaceIcon from "../../../../Icons/InterfaceIcon/index.jsx";
@@ -502,7 +502,7 @@ const DataSourceApiBox = () => {
                     Message.success('复制成功！')
                 }}>{CopyIcon('#3c99d8')}</div>
             </div>
-            <unsafeWindow.Deep.Menu openMode={'single'} defaultOpenKeys={'1'} embeddable={true}>
+            <unsafeWindow.Deep.Menu openMode={'single'} defaultOpenKeys={"0"} embeddable={true}>
                 {
                     DataSourceApiData.map((item,index) => {
                         return (
@@ -525,10 +525,10 @@ const DataSourceApiBox = () => {
                                                             Message.success('复制成功！')
                                                         } else Message.success('复制失败，请联系开发者！')
                                                     }}>
-                                                        <unsafeWindow.Deep.Balloon trigger={CopyIcon('#3c99d8')}
+                                                        <Balloon trigger={CopyIcon('#3c99d8')}
                                                                              closable={false}
                                                                              align={'t'}>复制
-                                                        </unsafeWindow.Deep.Balloon>
+                                                        </Balloon>
                                                     </div>
                                                     <div className={'jsApiIcon_Box'} onClick={() => {
                                                         const {project, skeleton} = AliLowCodeEngine;
@@ -543,10 +543,10 @@ const DataSourceApiBox = () => {
                                                         Message.success('数据源添加成功！')
                                                         setTimeout(() => dp.parent.add(dp), 100);
                                                     }}>
-                                                        <unsafeWindow.Deep.Balloon trigger={InterfaceIcon('#3c99d8')}
+                                                        <Balloon trigger={InterfaceIcon('#3c99d8')}
                                                                              closable={false}
                                                                              align={'t'}>一键创建数据源（无数据）
-                                                        </unsafeWindow.Deep.Balloon>
+                                                        </Balloon>
                                                     </div>
                                                     <div className={'jsApiIcon_Box'} onClick={() => {
                                                         const {project, skeleton} = AliLowCodeEngine;
@@ -562,10 +562,10 @@ const DataSourceApiBox = () => {
                                                         Message.success('数据源添加成功！')
                                                         setTimeout(() => dp.parent.add(dp), 100);
                                                     }}>
-                                                        <unsafeWindow.Deep.Balloon trigger={InterfaceIcon('#3c99d8')}
+                                                        <Balloon trigger={InterfaceIcon('#3c99d8')}
                                                                              closable={false}
                                                                              align={'t'}>一键创建数据源（有数据）
-                                                        </unsafeWindow.Deep.Balloon>
+                                                        </Balloon>
                                                     </div>
                                                 </div>
                                                 <Table dataSource={content.params}>

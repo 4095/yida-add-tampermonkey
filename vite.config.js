@@ -20,7 +20,7 @@ export default defineConfig({
                 externalGlobals: {
                     'react': cdn.jsdelivr('React', 'umd/react.production.min.js'),
                     'react-dom': cdn.jsdelivr('ReactDOM', 'umd/react-dom.production.min.js'),
-                    'XLSX': ['XLSX',()=>`https://cdn.bootcdn.net/ajax/libs/xlsx/0.18.5/xlsx.full.min.js`],
+                    'XLSX': ['XLSX','https://cdn.bootcdn.net/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'],
                 },
             },
         }),

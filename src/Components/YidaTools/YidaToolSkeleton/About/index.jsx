@@ -15,12 +15,15 @@ const About = () => {
             <div>作者：</div>
             <div style={{display: "flex", alignItems: "center", gap: 8}}>
                 <Text code>Navcoo.Li</Text>
-                <a style={{cursor: "pointer"}} href={"https://applink.dingtalk.com/page/profile?phone=li78080114"}>{DingTalkIcon('#1296db')}</a>
+                <a style={{cursor: "pointer"}}
+                   href={"https://applink.dingtalk.com/page/profile?phone=li78080114"}>{DingTalkIcon('#1296db')}</a>
             </div>
             <div>项目地址：</div>
             <div style={{display: "flex", alignItems: "center", gap: 8}}>
-                <a style={{cursor: "pointer"}} href={"https://github.com/4095/yida-add-tampermonkey"}>{GithubIcon()}</a>
-                <a style={{cursor: "pointer"}} href={"https://greasyfork.org/zh-CN/scripts/474556-%E5%AE%9C%E6%90%AD"}>{GreasyForkIcon()}</a>
+                <a style={{cursor: "pointer"}} target={"_blank"}
+                   href={"https://github.com/4095/yida-add-tampermonkey"}>{GithubIcon()}</a>
+                <a style={{cursor: "pointer"}} target={"_blank"}
+                   href={"https://greasyfork.org/zh-CN/scripts/474556-%E5%AE%9C%E6%90%AD"}>{GreasyForkIcon()}</a>
             </div>
         </div>
     );
