@@ -24,7 +24,7 @@ class SelectFormBox extends Component {
             'click',
             true,
             false,
-            window,
+            unsafeWindow,
             0,
             0,
             0,

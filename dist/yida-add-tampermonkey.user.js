@@ -47321,7 +47321,7 @@ export async function fieldsValidate(fieldList = []) {
           "click",
           true,
           false,
-          window,
+          _unsafeWindow,
           0,
           0,
           0,
