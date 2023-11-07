@@ -11,7 +11,7 @@ const About = () => {
     return (
         <div className={'about_box'}>
             <div>当前版本：</div>
-            <Text code>Version 2.2.1</Text>
+            <Text code>Version 2.2.2</Text>
             <div>作者：</div>
             <div style={{display: "flex", alignItems: "center", gap: 8}}>
                 <Text code>Navcoo.Li</Text>

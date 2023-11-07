@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       宜搭+
 // @namespace  npm/vite-plugin-monkey
-// @version    2.2.1
+// @version    2.2.2
 // @author     Navcoo.Li
 // @icon       https://www.google.com/s2/favicons?sz=64&domain=aliwork.com
 // @match      https://*.aliwork.com/alibaba/web/*/design/*
@@ -26440,6 +26440,173 @@ export async function fieldsValidate(fieldList = []) {
         description: "打开需要调试页面的动作面板，在最上方直接输入下面代码。访问进行调试。 注意调试完成后删除该代码。",
         code: `const vConsole = 'https://g.alicdn.com/code/lib/vConsole/3.11.2/vconsole.min.js';const js = document.createElement('script');js.src = vConsole;document.body.append(js);js.onload = function() {
   window.vConsole = new window.VConsole();};`
+      },
+      {
+        title: "获取子表单指定行数据",
+        description: "--",
+        code: `// 获取子表单组件
+const tableField = this.$('tableField_l0q1sf8l');
+// 获取子表单所有行标识
+let items = tableField.getItems();
+// 传入指定的行标识
+let rowData = tableField.getItemValue(items[0]);`
+      },
+      {
+        title: "获取子表单指定行指定组件数据",
+        description: "--",
+        code: `// 获取子表单组件
+const tableField = this.$('tableField_l0q1sf8l');
+
+// 获取子表单所有行标识
+let items = tableField.getItems();
+
+// 传入指定的行标识
+let rowData = tableField.getItemValue(items[0]);
+
+// 传入指定的组件唯一标识
+let fieldValue = rowData["textField_l0q1sf8m"];`
+      },
+      {
+        title: "更新子表单指定行的数据",
+        description: "--",
+        code: `const { formGroupId, from, changes = {}, tableFieldId } = extra || {};
+// 必须，避免使用 updateItemValue 更新子表数据后，再次触发 onChange 陷入死循环
+if (from === 'setItemValue') { return };
+// 获取子表单组件
+const tableField = this.$('tableField_l0q1sf8l');
+// 更新指定行对应字段，需传入指定的行标识 (formGroupId)，以及更新后的数据 Object
+tableField.updateItemValue(formGroupId, {
+  textField_l0q1sf8m: "4",
+  selectField_l0q1sf8n: "选项二",
+});`
+      },
+      {
+        title: "tableToTable()",
+        description: "子表单填充子表单",
+        code: `//函数示例
+// 子表单填充子表单，快速生成子表单数据
+// tableData：目标子表单组件数据
+// relation：字段映射关系 target：目标子表单字段唯一标识，current：当前子表单字段唯一标识
+export function tableToTable(tableData = [], relation = []) {
+  const result = []; // 数据处理结果
+  if (!tableData.length || !relation.length) { return result };
+  for (let i = 0; i < tableData.length; i++) {
+    let itemObj = {};
+    for (let j = 0; j < relation.length; j++) {
+      itemObj[relation[j].current] = tableData[i][relation[j].target]
+    };
+    result.push(itemObj);
+  };
+  return result;
+}
+//使用方法
+// tableData 通常由数据源获取得到
+const tableData = [{
+  textField_lbafn35q: '砂锅黄焖鸡',
+  numberField_lbafn35r: 24
+}, {
+  textField_lbafn35q: '砂锅土豆',
+  numberField_lbafn35r: 28
+}];
+
+// relation 需按照实际情况手动配置
+const relation = [{
+  target: 'textField_lbafn35q', // 目标子表单字段唯一标识
+  current: 'textField_lbaft5ob' // 当前子表单字段唯一标识
+}, {
+  target: 'numberField_lbafn35r',
+  current: 'numberField_lbaft5oc'
+}];
+
+this.$('tableField_lbaft5oa').setValue(this.tableToTable(tableData, relation));`
+      },
+      {
+        title: "子表单类数据联动",
+        description: "--",
+        code: `export function onChange({ value, extra }) {
+  // 需将此方法绑定到子表单的onChange上
+  // 子表单数据变更时，除单元格变化引起的数据变更外，公式计算、数据联动或者外部赋值都会触发子表单的 onChange 事件
+  // 解构相关属性
+  const { formGroupId, from, changes = {}, tableFieldId } = extra || {};
+  // 必须，避免使用 updateItemValue 更新子表数据后，再次触发 onChange 陷入死循环
+  if (from === 'setItemValue') { return };
+  // 获取子表单组件
+  const tableField = this.$(tableFieldId);
+  // 判断是否是子表单内某字段变化
+  /* if (changes.fieldId === 'textField_l0q1sf8m' || (changes.name ? changes.name.split(".")[1] === 'textField_l0q1sf8m' : false)) {
+
+    }; */
+  // 更新子表单指定列数据，可与上述结合使用
+  /* tableField.updateItemValue(formGroupId, {
+      'selectField_l0q1sf8n': "选项二", // 更新对应字段
+    }); */
+  // 结合使用，实现类数据联动效果，支持数据源写法
+  if (changes.fieldId === 'textField_l0q1sf8m') {
+    tableField.updateItemValue(formGroupId, {
+      'selectField_l0q1sf8n': "选项二", // 更新对应字段
+    });
+  };
+}`
+      },
+      {
+        title: "控制行内其他组件是否必填",
+        description: "--",
+        code: `const tableField = this.$('tableField_lhu7ixu8');
+const validation = value === 'true' ? [{ type: 'required' }] : [];
+tableField.getComponent(formGroupId, 'textField_lhu7ixu7').setValidation(validation); `
+      },
+      {
+        title: "异步请求全量数据",
+        description: "--",
+        code: `//示例为onChange事件触发
+export function onChange({ value }) {
+  var formUuid = "FORM-QQ866JB1Q4R6U2BLALBVN7K8PUZU36TWX9ACL6"
+  //  参数 formUuid  表单id
+  // data  请求获得的大批量数据
+  this.searchFormData(formUuid, data => {
+    console.log("data", data)
+  })
+}
+export function searchFormData(formUuid, callback) {
+  var res = this.state.searchFormDatas
+  var number = Math.ceil(res.totalCount / 100)
+  var numberData = []
+  for (let i = 0; i < number; i++) {
+    numberData.push(i)
+  }
+  var data = []
+  var params = numberData.map(item => {
+    return new Promise((reslove, reject) => {
+      var params = {
+        "formUuid": formUuid,
+        "pageSize": 100,
+        "currentPage": item + 1
+      }
+      this.dataSourceMap.searchFormDatas.load(params).then(res => {
+        data.push(...res.data)
+        reslove(item)
+      })
+    })
+  })
+
+  Promise.all(params).then(() => {
+    callback(data)
+  })
+}`
+      },
+      {
+        title: "判断是否为空Object或空Array",
+        description: "--",
+        code: `// data：Array、Object 待检验的数据   1、判断当前参数是否为空Object或者空Array，是则返回true。反之，返回false。2、常用于判断数据是否为空数据，避免传入错误参数。
+export function isEmptyObject(data) {
+  let i;
+  for (i in data) {
+    if (Object.prototype.hasOwnProperty.call(data, i)) {
+      return !1;
+    }
+  }
+  return !0;
+}`
       }
     ];
     return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1", children: CommonCodeData.map((item, index2) => {
@@ -26540,7 +26707,7 @@ export async function fieldsValidate(fieldList = []) {
     const { Text: Text2 } = Typography$1;
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "about_box", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "当前版本：" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Version 2.2.1" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Version 2.2.2" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "作者：" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Navcoo.Li" }),
@@ -26548,6 +26715,7 @@ export async function fieldsValidate(fieldList = []) {
           "a",
           {
             style: { cursor: "pointer" },
+            target: "_blank",
             href: "https://applink.dingtalk.com/page/profile?phone=li78080114",
             children: DingTalkIcon("#1296db")
           }
@@ -48414,7 +48582,13 @@ export async function fieldsValidate(fieldList = []) {
         ] }) }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Table$1, { dataSource: this.state.tableObj, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "名称", dataIndex: "title" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "唯一标识", dataIndex: "dataKey" })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "唯一标识", dataIndex: "dataKey" }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "操作", cell: (record) => {
+            return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { text: true, type: "primary", onClick: () => {
+              _GM_setClipboard(record.dataKey);
+              Message.success("复制成功！");
+            }, children: "复制" });
+          } })
         ] })
       ] });
     }
