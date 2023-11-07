@@ -186,8 +186,9 @@ class SelectFormBox extends Component {
                 <Table dataSource={this.state.tableObj}>
                     <Table.Column title="名称" dataIndex="title"/>
                     <Table.Column title="唯一标识" dataIndex="dataKey"/>
-                    <Table.Column title="操作" cell={(record) => {
+                    <Table.Column title="操作" cell={(value, index, record) => {
                         return <Button text type={"primary"} onClick={() => {
+                            console.log(value, index, record)
                             GM_setClipboard(record.dataKey);
                             Message.success('复制成功！')
                         }}>复制</Button>

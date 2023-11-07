@@ -12,7 +12,7 @@ export default defineConfig({
                 name: '宜搭+',
                 icon: 'https://www.google.com/s2/favicons?sz=64&domain=aliwork.com',
                 namespace: 'npm/vite-plugin-monkey',
-                version: '2.2.2',
+                version: '2.2.3',
                 match: ['https://*.aliwork.com/alibaba/web/*/design/*'],
                 author: 'Navcoo.Li',
             },

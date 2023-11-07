@@ -572,7 +572,7 @@ const DataSourceApiBox = () => {
                                                     <Table.Column title={'参数名'} dataIndex={'parameterName'}/>
                                                     <Table.Column title={'描述'} dataIndex={'description'}/>
                                                     <Table.Column title={'必填'} dataIndex={'requiredFields'}/>
-                                                    <Table.Column title={'操作'} cell={(record) => {
+                                                    <Table.Column title={'操作'} cell={(value, index, record) => {
                                                         return <Button type={'primary'} text onClick={() => {
                                                             GM_setClipboard(record.parameterName);
                                                             Message.success('复制成功！')

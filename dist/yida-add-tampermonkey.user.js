@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       宜搭+
 // @namespace  npm/vite-plugin-monkey
-// @version    2.2.2
+// @version    2.2.3
 // @author     Navcoo.Li
 // @icon       https://www.google.com/s2/favicons?sz=64&domain=aliwork.com
 // @match      https://*.aliwork.com/alibaba/web/*/design/*
@@ -26305,7 +26305,7 @@ const [timeStart, timeEnd] = this.utils.getDateTimeRange(when:number, type:Strin
               /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "参数名", dataIndex: "parameterName" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "描述", dataIndex: "description" }),
               /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "必填", dataIndex: "requiredFields" }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "操作", cell: (record) => {
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "操作", cell: (value, index22, record) => {
                 return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "primary", text: true, onClick: () => {
                   _GM_setClipboard(record.parameterName);
                   Message.success("复制成功！");
@@ -26707,7 +26707,7 @@ export function isEmptyObject(data) {
     const { Text: Text2 } = Typography$1;
     return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "about_box yidaToolSkeletonBox", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "当前版本：" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Version 2.2.2" }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Version 2.2.3" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "作者：" }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Navcoo.Li" }),
@@ -48583,8 +48583,9 @@ export function isEmptyObject(data) {
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Table$1, { dataSource: this.state.tableObj, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "名称", dataIndex: "title" }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "唯一标识", dataIndex: "dataKey" }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "操作", cell: (record) => {
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Table$1.Column, { title: "操作", cell: (value, index2, record) => {
             return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { text: true, type: "primary", onClick: () => {
+              console.log(value, index2, record);
               _GM_setClipboard(record.dataKey);
               Message.success("复制成功！");
             }, children: "复制" });
