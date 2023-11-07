@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Button, Checkbox, Field, Form, Icon, Input, Table} from "@alifd/next";
-import {unsafeWindow} from "$";
+import {Button, Checkbox, Field, Form, Icon, Input, Message, Table} from "@alifd/next";
+import {GM_setClipboard, unsafeWindow} from "$";
 import * as XLSX from "xlsx";
 
 
@@ -180,11 +180,17 @@ class SelectFormBox extends Component {
                         workbookBlob,
                         `表单数据-${year}-${month}-${day}.xlsx`
                     );
-                }}><Icon type="download" />下载</Button>
+                }}><Icon type="download"/>下载</Button>
             </div>
             <Table dataSource={this.state.tableObj}>
                 <Table.Column title="名称" dataIndex="title"/>
                 <Table.Column title="唯一标识" dataIndex="dataKey"/>
+                <Table.Column title="操作" cell={(record) => {
+                    return <Button text type={"primary"} onClick={() => {
+                        GM_setClipboard(record.dataKey);
+                        Message.success('复制成功！')
+                    }}>复制</Button>
+                }}/>
             </Table>
         </div>);
     }

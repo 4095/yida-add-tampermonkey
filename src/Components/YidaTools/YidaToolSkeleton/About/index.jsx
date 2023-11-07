@@ -15,7 +15,7 @@ const About = () => {
             <div>作者：</div>
             <div style={{display: "flex", alignItems: "center", gap: 8}}>
                 <Text code>Navcoo.Li</Text>
-                <a style={{cursor: "pointer"}}
+                <a style={{cursor: "pointer"}} target={"_blank"}
                    href={"https://applink.dingtalk.com/page/profile?phone=li78080114"}>{DingTalkIcon('#1296db')}</a>
             </div>
             <div>项目地址：</div>
