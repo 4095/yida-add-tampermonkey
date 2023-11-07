@@ -93,3 +93,7 @@
     border-color: rgba(31, 56, 88, 0.06);
     border-radius: 4px;
 }
+.yidaToolSkeletonBox{
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+}

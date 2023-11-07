@@ -78,7 +78,7 @@ const CommonCodeBox = () => {
     ];
 
     return (
-        <div className={'box-grid-1'}>
+        <div className={'box-grid-1 yidaToolSkeletonBox'}>
             {
                 CommonCodeData.map((item, index) => {
                     return (

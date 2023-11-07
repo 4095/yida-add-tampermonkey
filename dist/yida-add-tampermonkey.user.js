@@ -12,7 +12,7 @@
 // @grant      unsafeWindow
 // ==/UserScript==
 
-(e=>{if(typeof GM_addStyle=="function"){GM_addStyle(e);return}const o=document.createElement("style");o.textContent=e,document.head.append(o)})(" .box-grid-1{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:4px}.jsApiItemTitle{font-size:14px}.jsApiItemTitle_Box{display:flex;align-items:center;gap:8px}.jsApiItemDescription{font-size:12px;color:#1f385866}.jsApiItemIcon{cursor:pointer}.jsApiItem_Box{border-radius:4px;padding:4px}.jsApiItem_Box:hover{background-color:#1f38580a}.jsApiIcon_Box{cursor:pointer;height:14px}.box-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.DataSourceApi-title{display:flex;align-items:center;gap:4px}.DataSourceApi-content{width:600px;max-height:350px;overflow-y:auto;background:#ffffff;border:1px solid #ccc;border-radius:4px;padding:16px}.DataSourceApi-content-apiName{font-size:14px;font-weight:600;line-height:2em}.DataSourceApi-content-InterfacePath{font-size:14px;margin-bottom:4px;display:flex;align-items:center;gap:4px}.DataSourceApi-content-requestType{border-style:solid;border-width:1px;border-radius:4px;padding:1px 4px;display:inline;background-color:#1f38581a;border-color:#1f38580f}.about_box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:20px;gap:16px;border-style:solid;border-width:1px;border-color:#1f38580f;border-radius:4px}:root{font-family:Inter,Avenir,Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;min-width:320px;min-height:100vh}h1{font-size:3.2em;line-height:1.1}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}} ");
+(o=>{if(typeof GM_addStyle=="function"){GM_addStyle(o);return}const e=document.createElement("style");e.textContent=o,document.head.append(e)})(" .box-grid-1{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:4px}.jsApiItemTitle{font-size:14px}.jsApiItemTitle_Box{display:flex;align-items:center;gap:8px}.jsApiItemDescription{font-size:12px;color:#1f385866}.jsApiItemIcon{cursor:pointer}.jsApiItem_Box{border-radius:4px;padding:4px}.jsApiItem_Box:hover{background-color:#1f38580a}.jsApiIcon_Box{cursor:pointer;height:14px}.box-grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}.DataSourceApi-title{display:flex;align-items:center;gap:4px}.DataSourceApi-content{width:600px;max-height:350px;overflow-y:auto;background:#ffffff;border:1px solid #ccc;border-radius:4px;padding:16px}.DataSourceApi-content-apiName{font-size:14px;font-weight:600;line-height:2em}.DataSourceApi-content-InterfacePath{font-size:14px;margin-bottom:4px;display:flex;align-items:center;gap:4px}.DataSourceApi-content-requestType{border-style:solid;border-width:1px;border-radius:4px;padding:1px 4px;display:inline;background-color:#1f38581a;border-color:#1f38580f}.about_box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:20px;gap:16px;border-style:solid;border-width:1px;border-color:#1f38580f;border-radius:4px}.yidaToolSkeletonBox{max-height:calc(100vh - 160px);overflow-y:auto}:root{font-family:Inter,Avenir,Helvetica,Arial,sans-serif;font-size:16px;line-height:24px;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-text-size-adjust:100%}a{font-weight:500;color:#646cff;text-decoration:inherit}a:hover{color:#535bf2}body{margin:0;display:flex;place-items:center;min-width:320px;min-height:100vh}h1{font-size:3.2em;line-height:1.1}button{border-radius:8px;border:1px solid transparent;padding:.6em 1.2em;font-size:1em;font-weight:500;font-family:inherit;background-color:#1a1a1a;cursor:pointer;transition:border-color .25s}button:hover{border-color:#646cff}button:focus,button:focus-visible{outline:4px auto -webkit-focus-ring-color}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}a:hover{color:#747bff}button{background-color:#f9f9f9}} ");
 
 (function (React, ReactDOM) {
   'use strict';
@@ -25540,7 +25540,7 @@
         schema: JSON.stringify({ "componentsTree": [{ "componentName": "AssociationFormField" }] })
       }
     ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "box-grid-1", children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "yidaToolSkeletonBox", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "box-grid-1", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-2", children: componentsData.map((item) => {
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
           Button,
@@ -25558,7 +25558,7 @@
         );
       }) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1 border", children: /* @__PURE__ */ jsxRuntimeExports.jsx(TableTool, {}) })
-    ] });
+    ] }) });
   };
   const CopyIcon = (hexColor) => {
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(
@@ -25682,7 +25682,7 @@ const [timeStart, timeEnd] = this.utils.getDateTimeRange(when:number, type:Strin
 });`
       }
     ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1", children: jsApiData.map((item, index2) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1 yidaToolSkeletonBox", children: jsApiData.map((item, index2) => {
       return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jsApiItem_Box", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "jsApiItemTitle_Box", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jsApiItemTitle", children: item.title }),
@@ -26211,7 +26211,7 @@ const [timeStart, timeEnd] = this.utils.getDateTimeRange(when:number, type:Strin
         }]
       }
     ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "yidaToolSkeletonBox", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "DataSourceApi-content-InterfacePath", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "AppType（变量）" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jsApiIcon_Box", onClick: () => {
@@ -26609,7 +26609,7 @@ export function isEmptyObject(data) {
 }`
       }
     ];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1", children: CommonCodeData.map((item, index2) => {
+    return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "box-grid-1 yidaToolSkeletonBox", children: CommonCodeData.map((item, index2) => {
       return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jsApiItem_Box", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "jsApiItemTitle_Box", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: "jsApiItemTitle", children: item.title }),
@@ -26705,7 +26705,7 @@ export function isEmptyObject(data) {
   };
   const About = () => {
     const { Text: Text2 } = Typography$1;
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "about_box", children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "about_box yidaToolSkeletonBox", children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "当前版本：" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Text2, { code: true, children: "Version 2.2.2" }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("div", { children: "作者：" }),
@@ -48474,7 +48474,7 @@ export function isEmptyObject(data) {
     }
     render() {
       const { init, validate } = this.field;
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: "yidaToolSkeletonBox", children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h6", { style: { margin: "8px 0" }, children: "生成表格" }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Form, { size: "small", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsxs(Form.Item, { children: [

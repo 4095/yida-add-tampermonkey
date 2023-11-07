@@ -9,7 +9,7 @@ import GreasyForkIcon from "../../../../Icons/GreasyForkIcon/index.jsx";
 const About = () => {
     const {Text} = Typography;
     return (
-        <div className={'about_box'}>
+        <div className={'about_box yidaToolSkeletonBox'}>
             <div>当前版本：</div>
             <Text code>Version 2.2.2</Text>
             <div>作者：</div>

@@ -87,28 +87,30 @@ const ComponentsBox = () => {
         }
     ];
     return (
-        <div className={"box-grid-1"}>
-            <div className={"box-grid-2"}>
-                {
-                    componentsData.map((item) => {
-                        return (
-                            <Button
-                                key={item.title}
-                                onClick={() => {
-                                    if (item.schema) {
-                                        GM_setClipboard(item.schema);
-                                        Message.success('复制成功！');
-                                    } else Message.error('复制失败，请联系开发者！')
-                                }
-                                }>
-                                {item.title}
-                            </Button>
-                        )
-                    })
-                }
-            </div>
-            <div className={"box-grid-1 border"}>
-                <TableTool/>
+        <div className={'yidaToolSkeletonBox'}>
+            <div className={"box-grid-1"}>
+                <div className={"box-grid-2"}>
+                    {
+                        componentsData.map((item) => {
+                            return (
+                                <Button
+                                    key={item.title}
+                                    onClick={() => {
+                                        if (item.schema) {
+                                            GM_setClipboard(item.schema);
+                                            Message.success('复制成功！');
+                                        } else Message.error('复制失败，请联系开发者！')
+                                    }
+                                    }>
+                                    {item.title}
+                                </Button>
+                            )
+                        })
+                    }
+                </div>
+                <div className={"box-grid-1 border"}>
+                    <TableTool/>
+                </div>
             </div>
         </div>
     );

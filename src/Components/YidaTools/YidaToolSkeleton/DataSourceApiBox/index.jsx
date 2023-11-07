@@ -494,7 +494,7 @@ const DataSourceApiBox = () => {
 
 
     return (
-        <div>
+        <div className={'yidaToolSkeletonBox'}>
             <div className={'DataSourceApi-content-InterfacePath'}>
                 <div>AppType（变量）</div>
                 <div className={'jsApiIcon_Box'} onClick={() => {

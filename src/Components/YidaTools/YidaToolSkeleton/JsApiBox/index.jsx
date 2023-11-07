@@ -61,7 +61,7 @@ const JsApiBox = () => {
     }];
 
     return (
-        <div className={'box-grid-1'}>
+        <div className={'box-grid-1 yidaToolSkeletonBox'}>
             {jsApiData.map((item,index) => {
                 return (
                     <div className={'jsApiItem_Box'} key={index}>
