@@ -14,7 +14,7 @@ const CommonCodeBox = () => {
             description: '定时器（单次）',
             code: `setTimeout(()=>{\n\n},number)`
         }, {
-            title: "setTimeout()",
+            title: "setInterval()",
             description: '定时器（循环）',
             code: `// 设置一个计数器\n  let count = 0;\n  const interval = setInterval(() => {\n    ++count;\n    if (count === 5) {\n      //停止\n      clearInterval(interval);\n    }\n  }, number);`
         }, {

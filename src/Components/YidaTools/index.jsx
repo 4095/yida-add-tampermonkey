@@ -43,6 +43,11 @@ const YidaTools = () => {
         condition: true
     });
 
+    // 设置快捷键
+    AliLowCodeEngine.hotkey.bind('command+shift+z',(e)=>{
+        console.log(e)
+    })
+
     document.getElementsByClassName('lc-left-area-bottom')[0].children[0].style.display = 'block';
     console.log("Yida+加载完成！")
 };

@@ -26333,7 +26333,7 @@ const [timeStart, timeEnd] = this.utils.getDateTimeRange(when:number, type:Strin
 },number)`
       },
       {
-        title: "setTimeout()",
+        title: "setInterval()",
         description: "定时器（循环）",
         code: `// 设置一个计数器
   let count = 0;
@@ -48679,6 +48679,9 @@ export function isEmptyObject(data) {
       },
       important: true,
       condition: true
+    });
+    AliLowCodeEngine.hotkey.bind("command+shift+z", (e2) => {
+      console.log(e2);
     });
     document.getElementsByClassName("lc-left-area-bottom")[0].children[0].style.display = "block";
     console.log("Yida+加载完成！");
